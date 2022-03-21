@@ -1,0 +1,141 @@
+@import "variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding:0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-primary;
+    background-color: $primary;
+    color: #fff;
+}
+
+#app{
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-block{
+    background: $transparent-bg;
+    box-shadow: $shadow;
+    padding: 4% 7%;
+}
+
+h1{
+    font-size: 2.2em;
+    border-bottom: 1px solid #fff;
+    margin-bottom: $m4*2;
+}
+h2{
+    font-size: 1.9em;
+    font-family: inherit;
+    text-align: center;
+}
+
+form{
+    div{
+        margin-bottom: $m4;
+            label{
+                font-family: $font-primary;
+                font-size: 1.1em;
+                display: inline-block;
+                margin-bottom: $m;
+                span{
+                    font-size: 0.8em;
+                    color: $input-color;
+                }
+            }
+            p{
+                font-size: 0.9em;
+                color: $input-color;
+                text-align: right;
+                margin: 1% 0 0 0;
+                max-width: 96%;
+            }
+            input{
+                font-family: $font-primary;
+                color: #737373;
+            }
+            input:focus{
+                border:none;
+                outline: 2px solid $primary ;
+                box-shadow: $shadow;
+            }
+            input[type="text"],input[type="tel"]{
+                width: 96%;
+                padding: $input-pd;
+                border: none;
+            }
+            input[type="date"]{
+                position: relative;
+                width: 96%;
+                font-size: 1em;
+                display: block;
+                border: none;
+                padding: $input-pd;
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: auto;
+                height: auto;
+                color: transparent;
+                background: transparent;
+             }
+              input[type="date"]::-webkit-inner-spin-button,
+              input[type="date"]::-webkit-clear-button {
+                 z-index: 1;
+             }
+            select{
+                display: block;
+                width: 96%;
+                padding: $input-pd;
+                font-size: 1em;
+                // appearance: none;
+                border: none;
+                outline: none;
+                background:#fff;
+                color: #737373;
+                option{
+                    padding: 1%;
+                }
+                option:checked{
+                    background-color: $input-color;
+                }
+            }
+            select[multiple]{
+                overflow: hidden;
+            }
+    }
+    button{
+        font-size: 1.05em;
+        cursor: pointer;
+        padding: 2% 4%;
+        margin: $m4 $m4 0 0;
+        background: none;
+        color: #fff;
+        border: 1px solid #fff;
+        box-shadow: 0 0 20px rgb(255 255 255 / 20%);
+    }
+    button:disabled{
+        box-shadow: none;
+        border: 1px solid $btn-transparent;
+        color: $btn-transparent;
+    }
+}
